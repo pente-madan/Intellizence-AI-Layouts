@@ -73,9 +73,9 @@ export function Layout5() {
             {/* Pointers List */}
             <motion.div variants={itemVariants} className="flex flex-col gap-y-4 py-2">
               {signalPointers.map((pointer, idx) => (
-                <div key={idx} className="flex items-start gap-3 group">
+                <div key={idx} className="flex items-start gap-3 group hover-list-slide">
                   <div className="mt-1 flex-shrink-0 size-6 rounded-lg bg-white shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-blue-200 transition-colors">
-                    <Sparkles className="size-3.5 text-[#1d8cf8]" />
+                    <Sparkles className="size-3.5 text-[#1d8cf8] hover-icon-bounce" />
                   </div>
                   <span className="text-[#444] text-[15px] font-['Roboto',sans-serif] leading-tight group-hover:text-black transition-colors">
                     {pointer}
@@ -86,11 +86,11 @@ export function Layout5() {
 
             {/* CTA Button */}
             <motion.div variants={itemVariants} className="flex pt-2">
-              <button className="group relative bg-[#1d8cf8] px-8 py-4 rounded-2xl text-white font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-1 active:translate-y-0">
+              <button className="group relative bg-[#1d8cf8] px-8 py-4 rounded-2xl text-white font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-1 active:translate-y-0 hover-lift hover-glow">
                 <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 <span className="relative flex items-center gap-2">
                   Schedule a Demo
-                  <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="size-5 transition-transform group-hover:translate-x-1 hover-icon-bounce" />
                 </span>
               </button>
             </motion.div>
@@ -141,9 +141,9 @@ export function Layout5() {
             {/* Pointers List */}
             <motion.div variants={itemVariants} className="flex flex-col gap-y-4 py-2">
               {datasetPointers.map((pointer, idx) => (
-                <div key={idx} className="flex items-start gap-3 group">
+                <div key={idx} className="flex items-start gap-3 group hover-list-slide">
                   <div className="mt-1 flex-shrink-0 size-6 rounded-lg bg-white/10 shadow-sm flex items-center justify-center border border-white/20 group-hover:border-white/40 transition-colors">
-                    <Box className="size-3.5 text-white" />
+                    <Box className="size-3.5 text-white hover-icon-bounce" />
                   </div>
                   <span className="text-white/90 text-[15px] font-['Roboto',sans-serif] leading-tight group-hover:text-white transition-colors">
                     {pointer}
@@ -154,10 +154,10 @@ export function Layout5() {
 
             {/* CTA Button */}
             <motion.div variants={itemVariants} className="flex pt-2">
-              <button className="group relative bg-white px-8 py-4 rounded-2xl text-[#1d8cf8] font-bold text-lg transition-all duration-300 hover:bg-gray-50 hover:shadow-xl hover:-translate-y-1 active:translate-y-0">
+              <button className="group relative bg-white px-8 py-4 rounded-2xl text-[#1d8cf8] font-bold text-lg transition-all duration-300 hover:bg-gray-50 hover:shadow-xl hover:-translate-y-1 active:translate-y-0 hover-lift">
                 <span className="relative flex items-center gap-2">
                   Start Free Trial
-                  <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="size-5 transition-transform group-hover:translate-x-1 hover-icon-bounce" />
                 </span>
               </button>
             </motion.div>

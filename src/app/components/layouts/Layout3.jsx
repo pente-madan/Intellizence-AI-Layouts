@@ -72,7 +72,7 @@ export function Layout3() {
                         required
                         type="text"
                         placeholder="John"
-                        className="w-full px-5 py-3.5 bg-[#f8fafc] border border-[#e2e8f0] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#1d8cf8]/20 focus:border-[#1d8cf8] transition-all placeholder:text-[#cbd5e1]"
+                        className="w-full px-5 py-3.5 bg-[#f8fafc] border border-[#e2e8f0] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#1d8cf8]/20 focus:border-[#1d8cf8] transition-all placeholder:text-[#cbd5e1] hover-input-focus"
                       />
                     </div>
                     <div className="space-y-1.5">
@@ -92,7 +92,7 @@ export function Layout3() {
                       required
                       type="email"
                       placeholder="support@figmamake.com"
-                      className="w-full px-5 py-3.5 bg-[#f8fafc] border border-[#e2e8f0] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#1d8cf8]/20 focus:border-[#1d8cf8] transition-all placeholder:text-[#cbd5e1]"
+                      className="w-full px-5 py-3.5 bg-[#f8fafc] border border-[#e2e8f0] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#1d8cf8]/20 focus:border-[#1d8cf8] transition-all placeholder:text-[#cbd5e1] hover-input-focus"
                     />
                   </div>
 
@@ -102,7 +102,7 @@ export function Layout3() {
                       required
                       type="text"
                       placeholder="Acme Inc."
-                      className="w-full px-5 py-3.5 bg-[#f8fafc] border border-[#e2e8f0] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#1d8cf8]/20 focus:border-[#1d8cf8] transition-all placeholder:text-[#cbd5e1]"
+                      className="w-full px-5 py-3.5 bg-[#f8fafc] border border-[#e2e8f0] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#1d8cf8]/20 focus:border-[#1d8cf8] transition-all placeholder:text-[#cbd5e1] hover-input-focus"
                     />
                   </div>
 
@@ -146,12 +146,11 @@ export function Layout3() {
 
                   <button
                     type="submit"
-                    className="w-full bg-[#1d8cf8] text-white font-bold py-5 rounded-2xl shadow-[0px_12px_24px_-8px_rgba(29,140,248,0.5)] hover:bg-[#1a7ee0] hover:shadow-[0px_16px_32px_-8px_rgba(29,140,248,0.6)] hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 group"
+                    className="w-full bg-[#1d8cf8] text-white font-bold py-5 rounded-2xl shadow-[0px_12px_24px_-8px_rgba(29,140,248,0.5)] hover:bg-[#1a7ee0] hover:shadow-[0px_16px_32px_-8px_rgba(29,140,248,0.6)] hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 group hover-lift hover-glow"
                   >
                     Get Started
-                    <Send className="size-4 transition-transform group-hover:translate-x-1" />
+                    <Send className="size-4 transition-transform group-hover:translate-x-1 hover-icon-bounce" />
                   </button>
-
 
                 </form>
               )}

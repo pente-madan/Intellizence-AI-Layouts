@@ -1,0 +1,260 @@
+/* Animate on Scroll Package */
+/* Apply these classes to elements for scroll-triggered animations */
+
+/* Fade In Animations */
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-fade-in.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-in-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-fade-in-left.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-fade-in-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-fade-in-right.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale Animations */
+.animate-scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-scale-in.animate-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.animate-scale-in-up {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-scale-in-up.animate-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Slide Animations */
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-up.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-slide-down {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-down.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-left.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-right.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Rotate Animations */
+.animate-rotate-in {
+  opacity: 0;
+  transform: rotate(-5deg) scale(0.9);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-rotate-in.animate-visible {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Bounce Animations */
+.animate-bounce-in {
+  opacity: 0;
+  transform: scale(0.3);
+  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Stagger Animations */
+.animate-stagger-1 { transition-delay: 0.1s; }
+.animate-stagger-2 { transition-delay: 0.2s; }
+.animate-stagger-3 { transition-delay: 0.3s; }
+.animate-stagger-4 { transition-delay: 0.4s; }
+.animate-stagger-5 { transition-delay: 0.5s; }
+
+/* Parallax Effects */
+.animate-parallax-slow {
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+}
+
+.animate-parallax-medium {
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
+}
+
+.animate-parallax-fast {
+  transform: translateY(0);
+  transition: transform 0.1s ease-out;
+}
+
+/* Reveal Animations */
+.animate-reveal-width {
+  width: 0;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-reveal-width.animate-visible {
+  width: 100%;
+}
+
+.animate-reveal-height {
+  height: 0;
+  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.animate-reveal-height.animate-visible {
+  height: auto;
+}
+
+/* Blur to Clear Animation */
+.animate-blur-in {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-blur-in.animate-visible {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+}
+
+/* Flip Animations */
+.animate-flip-in-x {
+  opacity: 0;
+  transform: rotateX(90deg);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-flip-in-x.animate-visible {
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+
+.animate-flip-in-y {
+  opacity: 0;
+  transform: rotateY(90deg);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-flip-in-y.animate-visible {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+/* Pulse Animation */
+.animate-pulse-once {
+  animation: pulse-once 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pulse-once {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* JavaScript Helper Classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Intersection Observer Classes */
+.intersection-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.intersection-hidden {
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}

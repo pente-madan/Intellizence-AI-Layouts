@@ -1,0 +1,185 @@
+/* Hover Effects Package */
+/* Apply these classes to elements for enhanced hover interactions */
+
+/* Button Hover Effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(29, 140, 248, 0.3);
+}
+
+.hover-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.hover-glow:hover::before {
+  left: 100%;
+}
+
+/* Card Hover Effects */
+.hover-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-rotate {
+  transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+  transform: rotate(1deg);
+}
+
+/* Text Hover Effects */
+.hover-text-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-text-glow:hover {
+  text-shadow: 0 0 10px rgba(29, 140, 248, 0.5);
+  color: #1d8cf8;
+}
+
+.hover-underline {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #1d8cf8;
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Icon Hover Effects */
+.hover-icon-bounce {
+  transition: transform 0.3s ease;
+}
+
+.hover-icon-bounce:hover {
+  transform: scale(1.1) translateY(-2px);
+}
+
+.hover-icon-spin {
+  transition: transform 0.3s ease;
+}
+
+.hover-icon-spin:hover {
+  transform: rotate(360deg);
+}
+
+/* Image Hover Effects */
+.hover-image-zoom {
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.hover-image-zoom img {
+  transition: transform 0.3s ease;
+}
+
+.hover-image-zoom:hover img {
+  transform: scale(1.05);
+}
+
+.hover-image-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-image-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(29, 140, 248, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hover-image-overlay:hover::before {
+  opacity: 1;
+}
+
+/* Form Element Hover Effects */
+.hover-input-focus {
+  transition: all 0.3s ease;
+}
+
+.hover-input-focus:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(29, 140, 248, 0.1);
+}
+
+/* List Item Hover Effects */
+.hover-list-slide {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hover-list-slide:hover {
+  background: rgba(29, 140, 248, 0.05);
+  transform: translateX(4px);
+}
+
+/* Badge Hover Effects */
+.hover-badge-pulse {
+  transition: all 0.3s ease;
+}
+
+.hover-badge-pulse:hover {
+  animation: pulse 2s infinite;
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}

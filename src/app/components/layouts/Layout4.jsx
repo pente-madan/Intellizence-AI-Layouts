@@ -115,14 +115,14 @@ export function Layout4() {
             >
               <button
                 type="button"
-                className="bg-[#1d8cf8] px-8 py-4 rounded-xl text-white font-bold text-[16px] transition-all duration-300 hover:bg-[#1a7ee0] hover:shadow-lg hover:shadow-[#1d8cf8]/30 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 group"
+                className="bg-[#1d8cf8] px-8 py-4 rounded-xl text-white font-bold text-[16px] transition-all duration-300 hover:bg-[#1a7ee0] hover:shadow-lg hover:shadow-[#1d8cf8]/30 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 group hover-lift hover-glow"
               >
                 Schedule a demo
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1 hover-icon-bounce" />
               </button>
               <button
                 type="button"
-                className="border-2 border-[#1d8cf8] px-8 py-4 rounded-xl text-[#1d8cf8] font-bold text-[16px] transition-all duration-300 hover:bg-[#eff6ff] hover:-translate-y-0.5 active:translate-y-0"
+                className="border-2 border-[#1d8cf8] px-8 py-4 rounded-xl text-[#1d8cf8] font-bold text-[16px] transition-all duration-300 hover:bg-[#eff6ff] hover:-translate-y-0.5 active:translate-y-0 hover-lift"
               >
                 Start a free trial
               </button>
