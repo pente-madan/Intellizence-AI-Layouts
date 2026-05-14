@@ -1,4 +1,5 @@
 import { Layout2 } from "./components/layouts/Layout2";
+import { Layout3 } from "./components/layouts/Layout3";
 
 function Heading() {
   return (
@@ -126,6 +127,7 @@ export default function App() {
         <Stats />
       </div>
       <Layout2 />
+      <Layout3 />
     </div>
   );
 }
