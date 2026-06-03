@@ -1,135 +1,181 @@
-import React from "react";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import React, { useState } from "react";
+import { CheckCircle2, Zap, ArrowRight, Sparkles, Clock, Shield, Star } from "lucide-react";
 import { motion } from "motion/react";
-import { ImageWithFallback } from "../figma/ImageWithFallback";
 
 export function Layout4() {
-  const points = [
-    {
-      title: "Real-time Signals",
-      description: "Monitor over 100+ critical event signals including M&A, funding, and leadership changes."
-    },
-    {
-      title: "AI-Powered Curation",
-      description: "Proprietary NLP engine filters noise to deliver high-fidelity, actionable intelligence."
-    },
-    {
-      title: "Seamless Integration",
-      description: "Connect intelligence directly into your CRM, Slack, or existing workflows."
-    }
-  ];
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    setTimeout(() => {
+      setIsSubmitted(false);
+    }, 5000);
+  };
 
   return (
-    <div className="bg-white relative w-full overflow-hidden py-24">
-      {/* Background decoration matching previous layouts */}
-      <div className="absolute bg-[rgba(239,246,255,0.4)] blur-[120px] right-[-100px] rounded-full size-[500px] top-[10%] pointer-events-none" />
-
-      <div className="relative mx-auto px-6 max-w-[1200px]">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-
-          {/* Left Side: Image */}
+    <div className="bg-gradient-to-br from-[#f8fbff] via-white to-[#eff6ff] relative w-full overflow-hidden py-24 flex items-center justify-center" style={{ minHeight: "700px" }}>
+      {/* Enhanced Background Accents */}
+      <div className="absolute bg-[rgba(29,140,248,0.06)] blur-[140px] right-[50px] rounded-full size-[700px] top-[-120px] pointer-events-none" />
+      <div className="absolute bg-[rgba(219,234,254,0.4)] blur-[100px] left-[-100px] rounded-full size-[600px] bottom-[-120px] pointer-events-none" />
+      
+      <div className="relative mx-auto px-6 max-w-[720px]">
+        
+        {!isSubmitted ? (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, x: -20 }}
-            whileInView={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="flex-1 w-full lg:max-w-[560px]"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
           >
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-[#1d8cf8]/10 rounded-[40px] blur-2xl transition-all duration-500 group-hover:bg-[#1d8cf8]/15" />
-              <div className="relative rounded-[32px] overflow-hidden shadow-2xl border border-white/50">
-                <ImageWithFallback
-                  src="https://res.cloudinary.com/drhyerkn7/image/upload/v1778745314/ChatGPT_Image_May_14_2026_01_24_44_PM_epckzg.png"
-                  alt="Market Intelligence Dashboard"
-                  className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
-                />
+              {/* Premium Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="absolute -top-4 left-1/2 -translate-x-1/2 z-10"
+              >
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#1d8cf8] to-[#0ea5e9] text-white px-6 py-2.5 rounded-full ring-2 ring-[#1d8cf8]/20">
+                  <Sparkles className="size-4 text-white" strokeWidth={2.5} />
+                  <span className="font-['Inter:Bold',sans-serif] font-bold text-[11px] tracking-[1px] uppercase">14-Day Free Trial</span>
+                </div>
+              </motion.div>
+
+              <div className="relative rounded-[32px] p-[2px] bg-gradient-to-br from-[#1d8cf8]/40 via-[#0ea5e9]/20 to-[#1d8cf8]/30 shadow-[0px_30px_90px_0px_rgba(0,0,0,0.12)]">
+                <div className="relative bg-white/70 backdrop-blur-2xl rounded-[30px] overflow-hidden">
+                
+                {/* Card Background Accents */}
+                <div className="absolute bg-[rgba(239,246,255,0.7)] blur-[100px] right-[-80px] rounded-full size-[300px] top-[-80px] pointer-events-none" />
+                <div className="absolute bg-[rgba(29,140,248,0.05)] blur-[80px] left-[-60px] rounded-full size-[250px] bottom-[-60px] pointer-events-none" />
+                
+                <div className="relative px-14 pt-16 pb-12 space-y-10">
+                  {/* Header Section */}
+                  <div className="text-center space-y-5">
+                    <h2 className="font-['Open_Sans:Bold',sans-serif] font-bold text-[#1a1a1a] text-[40px] leading-[1.15] tracking-[-0.02em]">
+                      Start Your Free Trial
+                    </h2>
+                    
+                    <p className="font-['Roboto:Regular',sans-serif] text-[#555] text-[17px] leading-[1.65] max-w-[500px] mx-auto">
+                      Experience the full power of AI-driven market intelligence. No credit card required, cancel anytime.
+                    </p>
+                  </div>
+
+                  {/* Trust Indicators */}
+                  <div className="space-y-3.5 pt-6 border-t border-gray-200/60 flex flex-col items-center">
+                    <div className="flex items-center gap-3.5 group/item">
+                      <div className="bg-[#1d8cf8]/10 rounded-full p-1.5 group-hover/item:bg-[#1d8cf8]/15 transition-colors">
+                        <CheckCircle2 className="size-4 text-[#1d8cf8]" strokeWidth={2.5} />
+                      </div>
+                      <span className="font-['Roboto:Regular',sans-serif] text-[#555] text-[15px] leading-[1.5]">Instant access to all premium features</span>
+                    </div>
+                    <div className="flex items-center gap-3.5 group/item">
+                      <div className="bg-[#1d8cf8]/10 rounded-full p-1.5 group-hover/item:bg-[#1d8cf8]/15 transition-colors">
+                        <Shield className="size-4 text-[#1d8cf8]" strokeWidth={2.5} />
+                      </div>
+                      <span className="font-['Roboto:Regular',sans-serif] text-[#555] text-[15px] leading-[1.5]">No payment method required to start</span>
+                    </div>
+                    <div className="flex items-center gap-3.5 group/item">
+                      <div className="bg-[#1d8cf8]/10 rounded-full p-1.5 group-hover/item:bg-[#1d8cf8]/15 transition-colors">
+                        <Star className="size-4 text-[#1d8cf8]" strokeWidth={2.5} />
+                      </div>
+                      <span className="font-['Roboto:Regular',sans-serif] text-[#555] text-[15px] leading-[1.5]">Cancel anytime with just one click</span>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="space-y-4">
+                    <button
+                      type="button"
+                      onClick={handleSubmit}
+                      className="w-full bg-gradient-to-r from-[#1d8cf8] to-[#0ea5e9] flex items-center justify-center gap-3 px-10 py-6 rounded-[14px] cursor-pointer transition-all duration-300 ease-out hover:shadow-2xl hover:shadow-[#1d8cf8]/40 hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] group relative overflow-hidden"
+                    >
+                      {/* Button Shimmer Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                      
+                      <p className="relative font-['Poppins:Medium',sans-serif] leading-[24px] text-[19px] text-white font-semibold whitespace-nowrap">
+                        Start Free Trial
+                      </p>
+                      <ArrowRight className="relative size-5 text-white transition-transform duration-300 group-hover:translate-x-1.5" strokeWidth={2.5} />
+                    </button>
+                    
+                    <p className="text-center font-['Roboto:Regular',sans-serif] text-[#888] text-[13px]">
+                      No credit card required • Full access for 14 days
+                    </p>
+                  </div>
+
+                  {/* Social Proof */}
+                  <div className="relative bg-gradient-to-r from-[#eff6ff] to-[#dbeafe]/50 rounded-[18px] p-5 text-center border border-[#1d8cf8]/10">
+                    <div className="flex items-center justify-center gap-2">
+                      <div className="flex -space-x-2">
+                        <div className="size-8 rounded-full bg-gradient-to-br from-[#1d8cf8] to-[#0ea5e9] ring-2 ring-white flex items-center justify-center">
+                          <Star className="size-4 text-white" fill="white" strokeWidth={0} />
+                        </div>
+                        <div className="size-8 rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#1d8cf8] ring-2 ring-white flex items-center justify-center">
+                          <Star className="size-4 text-white" fill="white" strokeWidth={0} />
+                        </div>
+                        <div className="size-8 rounded-full bg-gradient-to-br from-[#1d8cf8] to-[#0ea5e9] ring-2 ring-white flex items-center justify-center">
+                          <Star className="size-4 text-white" fill="white" strokeWidth={0} />
+                        </div>
+                      </div>
+                      <p className="font-['Roboto:Regular',sans-serif] text-[#1d8cf8] text-[14px] font-semibold">
+                        Join 5,000+ companies using Intellizence
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </motion.div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
+          >
+            <div className="relative bg-white/70 backdrop-blur-2xl rounded-[32px] shadow-[0px_30px_90px_0px_rgba(0,0,0,0.12)] overflow-hidden border border-white/60 px-14 py-16">
+              {/* Success Background Accents */}
+              <div className="absolute bg-[rgba(16,185,129,0.1)] blur-[100px] right-[-60px] rounded-full size-[250px] top-[-60px] pointer-events-none" />
+              <div className="absolute bg-[rgba(5,150,105,0.08)] blur-[80px] left-[-60px] rounded-full size-[220px] bottom-[-60px] pointer-events-none" />
+              
+              <div className="relative text-center space-y-8">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2, type: "spring", stiffness: 200 }}
+                  className="inline-flex items-center justify-center bg-gradient-to-br from-[#10b981] to-[#059669] rounded-full size-28 mx-auto shadow-2xl shadow-[#10b981]/30 ring-8 ring-[#10b981]/10"
+                >
+                  <CheckCircle2 className="size-14 text-white" strokeWidth={2.5} />
+                </motion.div>
+                
+                <div className="space-y-4">
+                  <h3 className="font-['Open_Sans:Bold',sans-serif] font-bold text-[#1a1a1a] text-[44px] leading-[1.15] tracking-[-0.02em]">
+                    Trial Activated!
+                  </h3>
+                  <p className="font-['Roboto:Regular',sans-serif] text-[#555] text-[18px] leading-[1.65] max-w-[480px] mx-auto">
+                    Welcome to Intellizence! Check your email for login credentials and get started in minutes.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-r from-[#d1fae5] to-[#a7f3d0] rounded-[18px] p-5 border border-[#10b981]/20">
+                  <p className="font-['Roboto:Regular',sans-serif] text-[#059669] text-[15px] font-semibold">
+                    🎉 Your 14-day free trial is now active
+                  </p>
+                </div>
+
+                <div className="pt-4">
+                  <button
+                    onClick={() => { setIsSubmitted(false); }}
+                    className="text-[#1d8cf8] font-['Roboto:Regular',sans-serif] font-semibold text-[15px] hover:underline transition-all"
+                  >
+                    Start Another Trial
+                  </button>
+                </div>
               </div>
             </div>
           </motion.div>
+        )}
 
-          {/* Right Side: Content */}
-          <div className="flex-1 space-y-12">
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-[#eff6ff] border-[#dbeafe] border-[0.889px] px-4 py-2 rounded-full"
-            >
-              <div className="bg-[#1d8cf8] opacity-[0.67] rounded-full size-2" />
-              <span className="font-['Inter:Bold',sans-serif] font-bold text-[#1d8cf8] text-[12px] tracking-[1.5px] uppercase">Market Leader</span>
-            </motion.div>
-
-            <div className="space-y-8">
-              <motion.h1
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="font-['Open_Sans:Bold',sans-serif] font-bold text-[#383838] text-[48px] leading-[1.1]"
-                style={{ fontVariationSettings: "'wdth' 100" }}
-              >Market Intelligence</motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="font-['Roboto:Regular',sans-serif] text-[#555] text-lg leading-relaxed max-w-[540px]"
-              >Stay informed about emerging industry trends & issues, disruptions, macro-economic indicators, and Government & Regulatory policy changes in a rapidly changing business environment.&nbsp;&nbsp;Make fact-based, objective, and timely decisions.            </motion.p>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="grid grid-cols-2 gap-x-8 gap-y-6"
-            >
-              {[
-                { left: "CXOs", right: "Market Intelligence" },
-                { left: "Corporate Strategy", right: "Competitive Intelligence" },
-                { left: "Innovation", right: "Market Research" }
-              ].map((row, index) => (
-                <React.Fragment key={index}>
-                  <div className="flex items-center gap-3 group">
-                    <div className="flex-shrink-0">
-                      <CheckCircle2 className="size-5 text-[#1d8cf8] transition-transform duration-300 group-hover:scale-110" />
-                    </div>
-                    <h3 className="font-['Roboto:Bold',sans-serif] font-bold text-[#383838] text-[16px]">
-                      {row.left}
-                    </h3>
-                  </div>
-                  <div className="flex items-center gap-3 group">
-                    <div className="flex-shrink-0">
-                      <CheckCircle2 className="size-5 text-[#1d8cf8] transition-transform duration-300 group-hover:scale-110" />
-                    </div>
-                    <h3 className="font-['Roboto:Bold',sans-serif] font-bold text-[#383838] text-[16px]">
-                      {row.right}
-                    </h3>
-                  </div>
-                </React.Fragment>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap gap-4 pt-4"
-            >
-              <button
-                type="button"
-                className="bg-[#1d8cf8] px-8 py-4 rounded-xl text-white font-bold text-[16px] transition-all duration-300 hover:bg-[#1a7ee0] hover:shadow-lg hover:shadow-[#1d8cf8]/30 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 group hover-lift hover-glow"
-              >
-                Schedule a demo
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1 hover-icon-bounce" />
-              </button>
-              <button
-                type="button"
-                className="border-2 border-[#1d8cf8] px-8 py-4 rounded-xl text-[#1d8cf8] font-bold text-[16px] transition-all duration-300 hover:bg-[#eff6ff] hover:-translate-y-0.5 active:translate-y-0 hover-lift"
-              >
-                Start a free trial
-              </button>
-            </motion.div>
-          </div>
-
-        </div>
       </div>
     </div>
   );

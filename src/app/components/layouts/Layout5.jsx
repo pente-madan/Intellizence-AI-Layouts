@@ -1,182 +1,136 @@
 import React from "react";
-import { Zap, Database, CheckCircle2, ArrowRight, Sparkles, Box, ShieldCheck, ZapOff } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 
 export function Layout5() {
-  const signalPointers = [
-    "Proprietary NLP monitoring of 10,000+ sources",
-    "Real-time alerts for executive & leadership changes",
-    "Detection of stealth-mode project launches",
-    "Social sentiment & viral brand momentum tracking"
-  ];
-
-  const datasetPointers = [
-    "Deep technographic stack analysis for 5M+ companies",
-    "Verified B2B contact data with 95%+ accuracy",
-    "Historical growth & headcount trend analysis",
-    "Global firmographics across 200+ countries"
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
+  const points = [
+    {
+      title: "Real-time Signals",
+      description: "Monitor over 100+ critical event signals including M&A, funding, and leadership changes."
+    },
+    {
+      title: "AI-Powered Curation",
+      description: "Proprietary NLP engine filters noise to deliver high-fidelity, actionable intelligence."
+    },
+    {
+      title: "Seamless Integration",
+      description: "Connect intelligence directly into your CRM, Slack, or existing workflows."
     }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-  };
+  ];
 
   return (
-    <section className="w-full bg-white overflow-hidden border-t border-gray-100">
-      <div className="flex flex-col lg:flex-row relative">
+    <div className="bg-white relative w-full overflow-hidden py-24">
+      {/* Background decoration matching previous layouts */}
+      <div className="absolute bg-[rgba(239,246,255,0.4)] blur-[120px] right-[-100px] rounded-full size-[500px] top-[10%] pointer-events-none" />
 
-        {/* Decorative Divider (Desktop only) */}
-        <div className="hidden lg:block absolute left-1/2 top-10 bottom-10 w-px bg-linear-to-b from-transparent via-gray-200 to-transparent z-20 -translate-x-1/2" />
+      <div className="relative mx-auto px-6 max-w-[1200px]">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
 
-        {/* Left Side: New Signals */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-          className="flex-1 relative flex flex-col p-8 lg:p-16 xl:p-24 bg-white overflow-hidden"
-        >
-          {/* Subtle Background Glow */}
-          <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-blue-50/40 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute -top-24 -left-24 size-96 bg-blue-100/20 blur-[100px] rounded-full pointer-events-none" />
-
-          <div className="relative z-10 space-y-10">
-            {/* Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2.5 bg-blue-50/80 backdrop-blur-sm border border-blue-100 px-4 py-1.5 rounded-full shadow-xs">
-              <Zap className="size-4 text-[#1d8cf8] fill-[#1d8cf8]/10" />
-              <span className="font-bold text-[#1d8cf8] text-[12px] tracking-[0.1em] uppercase font-['Inter',sans-serif]">Intelligence Stream</span>
-            </motion.div>
-
-            {/* Heading & Description */}
-            <div className="space-y-6">
-              <motion.h2 variants={itemVariants} className="text-[44px] lg:text-[52px] font-bold text-black leading-[1.05] font-['Open_Sans',sans-serif] tracking-tight">
-                New Signals
-              </motion.h2>
-              <motion.p variants={itemVariants} className="text-[#666] text-lg lg:text-xl leading-relaxed max-w-[540px] font-['Roboto',sans-serif]">
-                Stay ahead of the market with AI-driven event detection. Transform noise into high-fidelity signals that drive your next strategic move.
-              </motion.p>
-            </div>
-
-            {/* Pointers List */}
-            <motion.div variants={itemVariants} className="flex flex-col gap-y-4 py-2">
-              {signalPointers.map((pointer, idx) => (
-                <div key={idx} className="flex items-start gap-3 group hover-list-slide">
-                  <div className="mt-1 flex-shrink-0 size-6 rounded-lg bg-white shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-blue-200 transition-colors">
-                    <Sparkles className="size-3.5 text-[#1d8cf8] hover-icon-bounce" />
-                  </div>
-                  <span className="text-[#444] text-[15px] font-['Roboto',sans-serif] leading-tight group-hover:text-black transition-colors">
-                    {pointer}
-                  </span>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* CTA Button */}
-            <motion.div variants={itemVariants} className="flex pt-2">
-              <button className="group relative bg-[#1d8cf8] px-8 py-4 rounded-2xl text-white font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-1 active:translate-y-0 hover-lift hover-glow">
-                <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                <span className="relative flex items-center gap-2">
-                  Schedule a Demo
-                  <ArrowRight className="size-5 transition-transform group-hover:translate-x-1 hover-icon-bounce" />
-                </span>
-              </button>
-            </motion.div>
-
-            {/* Visual Enhancement: Image Card */}
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ scale: 1.02, rotate: -0.5 }}
-              className="relative mt-12 group"
-            >
-
-              <div className="relative rounded-[32px] overflow-hidden shadow-2xl border border-white/80 bg-white">
-
+          {/* Left Side: Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, x: -20 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            className="flex-1 w-full lg:max-w-[560px]"
+          >
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-[#1d8cf8]/10 rounded-[40px] blur-2xl transition-all duration-500 group-hover:bg-[#1d8cf8]/15" />
+              <div className="relative rounded-[32px] overflow-hidden shadow-2xl border border-white/50">
+                <ImageWithFallback
+                  src="https://res.cloudinary.com/drhyerkn7/image/upload/v1778745314/ChatGPT_Image_May_14_2026_01_24_44_PM_epckzg.png"
+                  alt="Market Intelligence Dashboard"
+                  className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
-            </motion.div>
-          </div>
-        </motion.div>
+            </div>
+          </motion.div>
 
-        {/* Right Side: Datasets */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-          className="flex-1 relative flex flex-col p-8 lg:p-16 xl:p-24 bg-[#1d8cf8] overflow-hidden"
-        >
-          {/* Subtle Background Glow */}
-          <div className="absolute bottom-0 right-0 w-full h-full bg-white/5 pointer-events-none" />
-          <div className="absolute -bottom-24 -right-24 size-96 bg-white/10 blur-[100px] rounded-full pointer-events-none" />
-
-          <div className="relative z-10 space-y-10">
-            {/* Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full shadow-sm">
-              <Database className="size-4 text-white fill-white/10" />
-              <span className="font-bold text-white text-[12px] tracking-[0.1em] uppercase font-['Inter',sans-serif]">Data Repository</span>
+          {/* Right Side: Content */}
+          <div className="flex-1 space-y-12">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-[#eff6ff] border-[#dbeafe] border-[0.889px] px-4 py-2 rounded-full"
+            >
+              <div className="bg-[#1d8cf8] opacity-[0.67] rounded-full size-2" />
+              <span className="font-['Inter:Bold',sans-serif] font-bold text-[#1d8cf8] text-[12px] tracking-[1.5px] uppercase">Market Leader</span>
             </motion.div>
 
-            {/* Heading & Description */}
-            <div className="space-y-6">
-              <motion.h2 variants={itemVariants} className="text-[44px] lg:text-[52px] font-bold text-white leading-[1.05] font-['Open_Sans',sans-serif] tracking-tight">
-                Deep Datasets
-              </motion.h2>
-              <motion.p variants={itemVariants} className="text-white/80 text-lg lg:text-xl leading-relaxed max-w-[540px] font-['Roboto',sans-serif]">
-                Access a multi-dimensional vault of company data. From tech stacks to financial health, our datasets provide the foundation for precision targeting.
-              </motion.p>
+            <div className="space-y-8">
+              <motion.h1
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="font-['Open_Sans:Bold',sans-serif] font-bold text-[#383838] text-[48px] leading-[1.1]"
+                style={{ fontVariationSettings: "'wdth' 100" }}
+              >Market Intelligence</motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="font-['Roboto:Regular',sans-serif] text-[#555] text-lg leading-relaxed max-w-[540px]"
+              >Stay informed about emerging industry trends & issues, disruptions, macro-economic indicators, and Government & Regulatory policy changes in a rapidly changing business environment.&nbsp;&nbsp;Make fact-based, objective, and timely decisions.            </motion.p>
             </div>
 
-            {/* Pointers List */}
-            <motion.div variants={itemVariants} className="flex flex-col gap-y-4 py-2">
-              {datasetPointers.map((pointer, idx) => (
-                <div key={idx} className="flex items-start gap-3 group hover-list-slide">
-                  <div className="mt-1 flex-shrink-0 size-6 rounded-lg bg-white/10 shadow-sm flex items-center justify-center border border-white/20 group-hover:border-white/40 transition-colors">
-                    <Box className="size-3.5 text-white hover-icon-bounce" />
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="grid grid-cols-2 gap-x-8 gap-y-6"
+            >
+              {[
+                { left: "CXOs", right: "Market Intelligence" },
+                { left: "Corporate Strategy", right: "Competitive Intelligence" },
+                { left: "Innovation", right: "Market Research" }
+              ].map((row, index) => (
+                <React.Fragment key={index}>
+                  <div className="flex items-center gap-3 group">
+                    <div className="flex-shrink-0">
+                      <CheckCircle2 className="size-5 text-[#1d8cf8] transition-transform duration-300 group-hover:scale-110" />
+                    </div>
+                    <h3 className="font-['Roboto:Bold',sans-serif] font-bold text-[#383838] text-[16px]">
+                      {row.left}
+                    </h3>
                   </div>
-                  <span className="text-white/90 text-[15px] font-['Roboto',sans-serif] leading-tight group-hover:text-white transition-colors">
-                    {pointer}
-                  </span>
-                </div>
+                  <div className="flex items-center gap-3 group">
+                    <div className="flex-shrink-0">
+                      <CheckCircle2 className="size-5 text-[#1d8cf8] transition-transform duration-300 group-hover:scale-110" />
+                    </div>
+                    <h3 className="font-['Roboto:Bold',sans-serif] font-bold text-[#383838] text-[16px]">
+                      {row.right}
+                    </h3>
+                  </div>
+                </React.Fragment>
               ))}
             </motion.div>
 
-            {/* CTA Button */}
-            <motion.div variants={itemVariants} className="flex pt-2">
-              <button className="group relative bg-white px-8 py-4 rounded-2xl text-[#1d8cf8] font-bold text-lg transition-all duration-300 hover:bg-gray-50 hover:shadow-xl hover:-translate-y-1 active:translate-y-0 hover-lift">
-                <span className="relative flex items-center gap-2">
-                  Start Free Trial
-                  <ArrowRight className="size-5 transition-transform group-hover:translate-x-1 hover-icon-bounce" />
-                </span>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-wrap gap-4 pt-4"
+            >
+              <button
+                type="button"
+                className="bg-[#1d8cf8] px-8 py-4 rounded-xl text-white font-bold text-[16px] transition-all duration-300 hover:bg-[#1a7ee0] hover:shadow-lg hover:shadow-[#1d8cf8]/30 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 group hover-lift hover-glow"
+              >
+                Schedule a demo
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1 hover-icon-bounce" />
+              </button>
+              <button
+                type="button"
+                className="border-2 border-[#1d8cf8] px-8 py-4 rounded-xl text-[#1d8cf8] font-bold text-[16px] transition-all duration-300 hover:bg-[#eff6ff] hover:-translate-y-0.5 active:translate-y-0 hover-lift"
+              >
+                Start a free trial
               </button>
             </motion.div>
-
-            {/* Visual Enhancement: Image Card */}
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ scale: 1.02, rotate: 0.5 }}
-              className="relative mt-12 group"
-            >
-
-
-            </motion.div>
           </div>
-        </motion.div>
+
+        </div>
       </div>
-
-      {/* Trust Micro-Interactions */}
-
-    </section>
+    </div>
   );
 }

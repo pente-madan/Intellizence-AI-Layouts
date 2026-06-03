@@ -2,6 +2,7 @@ import { Layout2 } from "./components/layouts/Layout2";
 import { Layout3 } from "./components/layouts/Layout3";
 import { Layout4 } from "./components/layouts/Layout4";
 import { Layout5 } from "./components/layouts/Layout5";
+import { Layout6 } from "./components/layouts/Layout6";
 import { Layout1 } from "./components/layouts/Layout1";
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
       <Layout3 />
       <Layout4 />
       <Layout5 />
+      <Layout6 />
     </div>
   );
 }
